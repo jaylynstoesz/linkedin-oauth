@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
+var db = require('monk')(process.env.MONGOLAB_URI);
+var collection = db.get('userInfo');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
